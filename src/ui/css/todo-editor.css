@@ -167,7 +167,6 @@ button[type="submit"]:hover{
     cursor: pointer;
 }
 
-/* Help tips styling */
 .editor-tips {
     margin-top: 5px;
     padding: 15px;
@@ -195,18 +194,13 @@ button[type="submit"]:hover{
 }
 
 .tip-text {
-    color: var(--dark-gray);
+    color: var(--black);
 }
 
 .editor-tips {
-    opacity: 0.3;
+    opacity: 1;
     transition: opacity 0.2s ease;
 }
-
-.editor-tips:hover {
-    opacity: 1;
-}
-
 @media (width<400px) {
     .editor-tips{
         opacity: 1;
