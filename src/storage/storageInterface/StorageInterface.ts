@@ -1,4 +1,5 @@
 import TodoItemInterface from "../../core/types/todoItemInterface";
+import {generateTodoId} from "../../core/BuisnessLogic/idGenerator";
 
 type TodoMap = Record<string, TodoItemInterface>;
 
@@ -46,7 +47,7 @@ export default class StorageInterface {
         const todos = this.getAll();
         const newTodo = {
             ...todo,
-            id: crypto.randomUUID(),
+            id: generateTodoId(),
             creationDateMark: new Date().toISOString()
         };
         todos[newTodo.id] = newTodo;

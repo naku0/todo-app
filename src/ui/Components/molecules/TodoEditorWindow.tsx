@@ -4,6 +4,7 @@ import "../../css/todo-editor.css";
 import {useTodoStore} from "../../../storage/zustandStores/ZustandStoreInterface";
 import Form from "../atoms/Form";
 import TodoItemInterface from "../../../core/types/todoItemInterface";
+import { generateTodoId } from '../../../core/BuisnessLogic/idGenerator';
 
 /**
  * Props for TodoEditorWindow component
@@ -71,7 +72,7 @@ const TodoEditorWindow = ({mode, onClose, todoId}: TodoEditorProps) => {
         e.preventDefault();
         const todoData: TodoItemInterface = {
             ...formData,
-            id: mode === 'create' ? crypto.randomUUID() : todoId!,
+            id: mode === 'create' ? generateTodoId() : todoId!,
             completed: false,
             creationDateMark: new Date().toISOString()
         };
