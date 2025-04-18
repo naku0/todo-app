@@ -64,7 +64,6 @@ const TodoEditorWindow = ({mode, onClose, todoId}: TodoEditorProps) => {
     };
 
     const handleTagsChange = (tags: string[]) => {
-        if (tags.length > 10) return;
         setFormData(prev => ({ ...prev, tags }));
     };
 
