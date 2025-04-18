@@ -135,7 +135,7 @@ const Form = ({formData, onTextChange, onPriorityChange, onTagsChange, onSubmit}
                 </div>
                 <div className="tip-item">
                     <Info className="tip-icon"/>
-                    <span className="tip-text">Press Enter or comma to add tags</span>
+                    <span className="tip-text">Press Enter or comma to add tags (max 10)</span>
                 </div>
                 <div className="tip-item">
                     <Info className="tip-icon"/>
