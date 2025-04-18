@@ -1,0 +1,19 @@
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    overflow: scroll;
+}
+
+.empty-message{
+    margin: 10px;
+    display: flex;
+    place-content: center;
+}
+
+@media (width<400px) {
+    .todo-list{
+        width: 90%;
+    }
+}

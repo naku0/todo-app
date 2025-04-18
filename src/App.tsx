@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './ui/css/App.css';
+import Button from "./ui/Components/atoms/Button";
+import TodoList from "./ui/Components/molecules/TodoList";
+import TodoEditorWindow from "./ui/Components/molecules/TodoEditorWindow";
+import {useEditorStore} from "./storage/zustandStores/EditorStore";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {isOpen, open, mode, close} = useEditorStore();
+
+    return (
+        <>
+            <div className="App">
+                {isOpen && <TodoEditorWindow mode={mode} onClose={close}/>}
+                <header className="App-header">
+                    task manager
+                </header>
+                <main>
+                    <TodoList/>
+                </main>
+            </div>
+            <footer>
+                <p>
+                    made by&nbsp;<a href="https://github.com/naku0">naku0</a>
+                </p>
+            </footer>
+        </>
+    );
 }
 
 export default App;

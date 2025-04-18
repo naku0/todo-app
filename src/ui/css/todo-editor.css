@@ -1,0 +1,214 @@
+.todo-editor-layout {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+
+    font-family: "Bahnschrift", sans-serif;
+}
+
+.todo-editor-window {
+    background-color: white;
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.todo-editor-header {
+    display: flex;
+    place-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.close-editor-button {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+}
+
+
+.close-editor-button:hover {
+    img {
+        cursor: pointer;
+        background-color: gainsboro;
+    }
+}
+
+.todo-editor-main {
+    form {
+        display: flex;
+        flex-direction: column;
+        place-content: space-evenly;
+        padding: 10px 20px;
+    }
+
+}
+
+.tag-creation-block {
+    .tag-collection.empty {
+        display: none;
+    }
+
+    .tag-collection {
+        padding: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        gap: 5px;
+
+        max-height: 150px;
+        overflow: scroll;
+    }
+
+    .tag-item {
+        display: flex;
+        place-items: center;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: var(--hover-gray);
+        color: var(--dark-gray);
+    }
+}
+
+.priority-selector.reverse-order {
+    padding: 5px 0;
+    button{
+        background-color: transparent;
+        border: none;
+    }
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.priority-selector.reverse-order .priority-btn:hover .priority-icon,
+.priority-selector.reverse-order .priority-btn:hover ~ .priority-btn .priority-icon {
+    fill: var(--red);
+    cursor: pointer;
+}
+
+.priority-selector.reverse-order .priority-btn.active .priority-icon,
+.priority-selector.reverse-order .priority-btn.active ~ .priority-btn .priority-icon {
+    fill: var(--red);
+}
+
+.priority-3:hover {
+    fill: var(--red);
+}
+
+.form-label {
+    display: flex;
+
+}
+
+.form-label ~ input {
+    margin: 10px 0;
+    padding: 5px 8px;
+
+    border-radius: 10px;
+}
+
+.priority-selector {
+    display: flex;
+    align-items: center;
+
+}
+
+form {
+    button[type="submit"] {
+        font-family: "Bahnschrift", sans-serif;
+        border: 1x solid var(--white);
+        background-color: var(--white);
+        margin-top: 10px;
+        padding: 10px;
+        color: var(--red);
+
+        border-radius: 8px;
+
+
+        transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    }
+}
+
+/* Подсветка невалидных полей */
+input:invalid {
+    border-color: var(--red);
+    box-shadow: 0 0 0 1px var(--red);
+}
+
+.close-editor-button:hover {
+    border-radius: 5px;
+
+    cursor: pointer;
+    background-color: var(--hover-gray);
+}
+
+
+button[type="submit"]:hover{
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.tag-item:hover{
+    cursor: pointer;
+}
+
+/* Help tips styling */
+.editor-tips {
+    margin-top: 5px;
+    padding: 15px;
+    background-color: var(--hover-gray);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.tip-item:last-child {
+    margin-bottom: 0;
+}
+
+.tip-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--dark-gray);
+    flex-shrink: 0;
+}
+
+.tip-text {
+    color: var(--dark-gray);
+}
+
+.editor-tips {
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+}
+
+.editor-tips:hover {
+    opacity: 1;
+}
+
+@media (width<400px) {
+    .editor-tips{
+        opacity: 1;
+    }
+}

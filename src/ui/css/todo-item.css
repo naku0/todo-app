@@ -1,0 +1,139 @@
+.todo-elem-block{
+    font-family: "Bahnschrift", sans-serif;
+    display: flex;
+    align-items: center;
+
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.todo-elem-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-elem-name.completed {
+    h1 {
+        color: var(--dark-gray);
+        text-decoration: line-through;
+    }
+}
+
+.main-info{
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    p{
+        display: flex;
+        place-items: center;
+        svg{
+            fill: var(--red);
+        }
+    }
+}
+
+.secondary-info{
+    font-family: "Bahnschrift", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    .tag-list{
+        display: flex;
+        align-items: center;
+    }
+    .tag-item{
+        display: flex;
+        place-items: center;
+        padding: 5px 10px;
+        margin: 0 5px;
+        border-radius: 10px;
+        background-color: var(--hover-gray);
+        color: var(--dark-gray);
+        filter: drop-shadow(0 0 3px rgba(0,0,0,0.15));
+    }
+}
+
+&{
+    .done-button,
+    .undo-button,
+    .delete,
+    .edit{
+        border: 1px solid var(--border-gray);
+        background-color: var(--white);
+        border-radius: 6px;
+        transition: background-color 0.25s ease-out, color 0.25s ease-in;
+
+    }
+}
+
+.done-button{
+    svg{
+        fill: var(--green);
+    }
+}
+
+.undo-button{
+    svg{
+        fill: var(--black);
+    }
+}
+
+.edit{
+    svg{
+        fill:var(--black);
+    }
+}
+
+.delete{
+    svg{
+        fill:var(--red);
+    }
+}
+
+.buttons{
+    margin-left: auto;
+
+    button{
+        margin: 0 2px;
+    }
+}
+
+.buttons button:hover{
+    cursor: pointer;
+}
+
+.done-button:hover{
+    background-color: var(--green);
+    svg{
+        fill: var(--white);
+    }
+}
+
+.undo-button:hover{
+    background-color: var(--blue);
+    svg{
+        fill: var(--white);
+    }
+}
+
+.edit:hover{
+    background-color: var(--yellow);
+    svg{
+        fill: var(--white);
+    }
+}
+
+.delete:hover{
+    background-color: var(--red);
+    svg{
+        fill: var(--white);
+    }
+}
+
+@media (width<400px) {
+    .todo-elem-name{
+        font-size: 0.75em;
+    }
+}
